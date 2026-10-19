@@ -1,6 +1,7 @@
 "use server";
 
 import { redirect } from "next/navigation";
+import { revalidatePath } from "next/cache";
 import { buatClientAdmin } from "@/lib/supabase/admin";
 
 export async function login(prevState, formData) {
@@ -109,6 +110,8 @@ export async function tambahProduk(prevState, formData) {
 
   const { error } = await supabase.from("produk").insert(produk);
   if (error) return { error: "Gagal menyimpan produk. Silakan coba lagi." };
+  revalidatePath("/");
+  revalidatePath("/admin");
   redirect("/admin");
 }
 
@@ -125,6 +128,9 @@ export async function ubahProduk(prevState, formData) {
 
   const { error } = await supabase.from("produk").update(produk).eq("id", id);
   if (error) return { error: "Gagal mengubah produk. Silakan coba lagi." };
+  revalidatePath("/");
+  revalidatePath("/admin");
+  revalidatePath(`/produk/${id}`);
   redirect("/admin");
 }
 
@@ -136,6 +142,8 @@ export async function hapusProduk(formData) {
 
   const { error } = await supabase.from("produk").delete().eq("id", formData.get("id"));
   if (error) return { error: "Gagal menghapus produk. Silakan coba lagi." };
+  revalidatePath("/");
+  revalidatePath("/admin");
   return { sukses: true };
 }
 

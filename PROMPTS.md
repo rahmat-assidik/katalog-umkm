@@ -53,3 +53,17 @@ Catat prompt penting selama membangun aplikasi: apa yang kamu minta, hasilnya, d
 ## Debugging dan fitur bonus
 
 Tambahkan bagian baru untuk setiap error yang kamu perbaiki atau fitur bonus yang kamu kerjakan.
+
+## US-07 sampai US-10
+
+**Prompt:** [SENDIRI] Hubungkan halaman admin dengan database dan buat CRUD produk yang selalu memeriksa sesi admin di server.
+
+**Hasil:** Daftar, tambah, ubah, dan hapus produk menggunakan Supabase serta validasi server.
+
+## US-11 sampai US-14
+
+**Prompt:** [SENDIRI] Tambahkan pencarian/kategori, jumlah/varian WhatsApp, PWA installable/offline dasar, dan generator deskripsi Gemini tanpa mengekspos kunci API.
+
+**Hasil:** Fitur bonus tersedia; Gemini dipanggil hanya melalui Server Action dan PWA memakai manifest, ikon, serta service worker.
+
+**Perbaikan:** Ditambahkan `revalidatePath` setelah perubahan produk agar katalog publik dan halaman detail segera konsisten.
