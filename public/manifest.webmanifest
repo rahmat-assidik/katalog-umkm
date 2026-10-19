@@ -2,13 +2,15 @@
   "name": "Toko Batam Blackout",
   "short_name": "Blackout",
   "description": "Katalog produk Toko Batam Blackout",
+  "id": "/",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#1f6b4f",
   "lang": "id",
   "icons": [
-    {"src":"/icons/icon-192.png","sizes":"192x192","type":"image/png"},
-    {"src":"/icons/icon-512.png","sizes":"512x512","type":"image/png"}
+    {"src":"/icons/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},
+    {"src":"/icons/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
   ]
 }
