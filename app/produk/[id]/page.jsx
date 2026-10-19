@@ -4,6 +4,8 @@ import TombolWhatsApp from "@/components/TombolWhatsApp";
 import { buatClientServer } from "@/lib/supabase/server";
 import { formatRupiah } from "@/lib/format";
 
+export const dynamic = "force-dynamic";
+
 export default async function HalamanDetailProduk({ params }) {
   const { id } = await params;
 
