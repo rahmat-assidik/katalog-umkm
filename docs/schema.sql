@@ -38,11 +38,11 @@ create policy "admin_hapus_produk" on public.produk
 -- 3. Data produk awal (hanya diisi jika tabel masih kosong)
 insert into public.produk (nama, harga, deskripsi, foto_url, kategori)
 select * from (values
-  ('Kopi Bubuk Robusta 250 g', 45000, 'Biji robusta disangrai sedang lalu digiling halus. Cocok untuk kopi tubruk dan kopi susu.', '/produk/kopi.svg', 'Minuman'),
-  ('Keripik Singkong Balado', 15000, 'Singkong iris tipis, digoreng renyah, dibalut bumbu balado pedas manis.', '/produk/keripik.svg', 'Camilan'),
-  ('Sambal Bawang Botol 150 ml', 25000, 'Cabai rawit dan bawang putih goreng dengan minyak, tahan hingga 2 bulan.', '/produk/sambal.svg', 'Bumbu'),
-  ('Kue Nastar Toples 500 g', 85000, 'Nastar lembut dengan selai nanas buatan sendiri. Dikemas toples kedap udara.', '/produk/nastar.svg', 'Kue kering'),
-  ('Tas Anyaman Pandan', 120000, 'Dianyam tangan dari daun pandan kering, dilapisi kain di bagian dalam.', '/produk/tas.svg', 'Kerajinan'),
-  ('Kain Batik Cap 2 m', 175000, 'Batik cap motif parang di atas kain katun primisima, panjang 2 meter.', '/produk/batik.svg', 'Kain')
+  ('Gorden Blackout Premium', 450000, 'Gorden blackout tebal yang membantu mengurangi cahaya dan panas matahari. Cocok untuk kamar tidur dan ruang keluarga.', '/produk/kopi.svg', 'Gorden blackout'),
+  ('Gorden Blackout Custom', 650000, 'Gorden blackout yang dibuat sesuai ukuran jendela dan pilihan warna rumahmu.', '/produk/keripik.svg', 'Gorden custom'),
+  ('Roller Blind Blackout', 375000, 'Roller blind praktis dengan bahan blackout untuk menjaga privasi dan membuat ruangan lebih nyaman.', '/produk/sambal.svg', 'Roller blind'),
+  ('Roman Shade Blackout', 550000, 'Penutup jendela bergaya modern dengan bahan blackout dan tampilan rapi.', '/produk/nastar.svg', 'Penutup jendela'),
+  ('Rel Gorden Besi Double', 185000, 'Rel gorden kuat untuk memasang gorden utama dan vitrage secara bersamaan.', '/produk/tas.svg', 'Aksesori gorden'),
+  ('Jasa Ukur dan Pasang', 150000, 'Layanan ukur dan pemasangan gorden blackout untuk area Batam dan sekitarnya.', '/produk/batik.svg', 'Layanan')
 ) as data_awal (nama, harga, deskripsi, foto_url, kategori)
 where not exists (select 1 from public.produk);
